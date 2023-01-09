@@ -8,8 +8,8 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4">
-        <h3 class="text-center"><b>Login here</b></h3>
-        <br>
+        <h3 class="text-center"><b>Login</b></h3>
+        <hr>
       <form method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="row mb-3">
