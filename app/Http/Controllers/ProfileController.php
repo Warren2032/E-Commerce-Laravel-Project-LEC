@@ -35,5 +35,6 @@ class ProfileController extends Controller
         $user->gender = $data['gender'];
         $user->save();
         
+        return view('profile', compact('user'));
     }
 }
