@@ -24,7 +24,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/home') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <img id="logo" src="{{ asset('storage/Images/logo.png') }}" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -99,15 +99,10 @@
         <main class="py-4">
             @yield('content')
         </main>
-
-        @if(!request()->is('login') && !request()->is('register'))
-            <div id="footer-cont">
-                <div class="foot-text">
-                    <h4 class="foot-text">Aigor's Clothings</h4>
-                    <h5 class="foot-text">Aigor is a clothing store that offers its <br>customers the most fashionable clothing and fabrics.</h5>
-                </div>
-            </div>
-        @endif
     </div>
 </body>
+<footer>
+    <h4>Aigor's Clothings</h4>
+    <h5>Aigor is a clothing store that offers its <br>customers the most fashionable clothing and fabrics.</h5>
+</footer>
 </html>

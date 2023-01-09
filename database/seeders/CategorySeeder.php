@@ -16,19 +16,13 @@ class CategorySeeder extends Seeder
     {
         $categories = [
             [
-                'name'=>'Video Games',
+                'name'=>'T-Shirts',
             ],
             [
-                'name'=>'Toys & Games',
+                'name'=>'Pants',
             ],
             [
-                'name'=>'Tools & Home Improvement',
-            ],
-            [
-                'name'=>'Movies & TV',
-            ],
-            [
-                'name'=>'Computers',
+                'name'=>'Shoes',
             ],
         ];
         foreach ($categories as $category) {

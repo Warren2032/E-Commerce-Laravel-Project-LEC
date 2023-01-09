@@ -3,12 +3,15 @@
 @section('content')
 <div class="container">
     <div id="banner">
-        <img id="banner-img" src="{{ asset('storage/Images/4.jpg') }}" alt="">
+        <img id="banner-img" src="{{ asset('storage/Images/banner.png') }}" alt="">
     </div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             @foreach($items as $key=>$categoryItems)
             <div class="card mb-3">
+                <div class="card-header">
+                    <a href=""> {{$categories[$key-1]['name']}} </a>
+                </div>
                 <div class="card-body">
                     <div class="container">
                         <div class="d-flex justify-content-auto row row-cols-5 ">
