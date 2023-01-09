@@ -1,0 +1,38 @@
+#banner{
+    padding-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#banner-img{
+    width:1280;
+    height:250px;
+}
+
+#footer-cont {
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100px;
+
+}
+
+.foot-text{
+    text-align: center;
+    font-size: 16px;
+    color: white;
+}
+
+.cont-img{
+    width:100%;
+    height:300px;
+    object-fit:scale-down;
+    object-position:50% 50%
+}
+
+.s{
+    list-style: none;
+}
