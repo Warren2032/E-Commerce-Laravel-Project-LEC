@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
@@ -25,3 +26,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('/me', [ProfileController::class, 'me'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile-update');
+
+Route::get('/detail', [ItemController::class, 'item']);
+Route::get('/category', [ItemController::class, 'item']);
