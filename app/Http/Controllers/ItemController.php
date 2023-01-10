@@ -17,4 +17,13 @@ class ItemController extends Controller
 
         return view('detail',compact('categories','items'));
     }
+    
+    public function result(){
+        $items = Item::all()->groupBy('category_id');
+        $categories=Category::all();
+
+        return view('categoryResult',compact('categories','items'));
+    }
+
+
 }

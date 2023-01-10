@@ -28,4 +28,4 @@ Route::get('/me', [ProfileController::class, 'me'])->name('profile');
 Route::post('/profile', [ProfileController::class, 'update'])->name('profile-update');
 
 Route::get('/detail', [ItemController::class, 'item']);
-Route::get('/category', [ItemController::class, 'item']);
+Route::get('/category', [ItemController::class, 'result']);
