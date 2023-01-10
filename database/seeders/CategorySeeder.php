@@ -22,7 +22,7 @@ class CategorySeeder extends Seeder
                 'name'=>'Pants',
             ],
             [
-                'name'=>'Shoes',
+                'name'=>'Hoodies',
             ],
         ];
         foreach ($categories as $category) {

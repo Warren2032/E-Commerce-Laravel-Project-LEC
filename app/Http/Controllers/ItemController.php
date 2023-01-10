@@ -10,20 +10,15 @@ use Illuminate\Support\Facades\DB;
 class ItemController extends Controller
 {
     //
+    public function item($id){
+        $item = Item::find($id);
 
-    public function item(){
-        $items = Item::all()->groupBy('category_id');
-        $categories=Category::all();
-
-        return view('detail',compact('categories','items'));
-    }
-    
-    public function result(){
-        $items = Item::all()->groupBy('category_id');
-        $categories=Category::all();
-
-        return view('categoryResult',compact('categories','items'));
+        return view('detail',compact('item'));
     }
 
-
+    public function result($id){
+        $category = Category::find($id);
+        $items = $category->items()->paginate(10);
+        return view ('categoryResult',compact('items','category'));
+    }
 }

@@ -40,7 +40,7 @@
 
                             <ul class="dropdown-menu">
                                 @foreach ($categories as $key => $category)
-                                <li><a class="dropdown-item" href="">{{$category['name']}}</a></li>
+                                <li><a class="dropdown-item" href="{{route('category',$key+1)}}">{{$category['name']}}</a></li>
                                 @endforeach
                             </ul>
                         </li>
