@@ -96,7 +96,7 @@ class ItemSeeder extends Seeder
                 'category_id'=>3,
                 'name'=>"Hoodie Mothernature Steeple Grey",
                 'desc'=>"Hoodie saat ini merupakan salah satu lini pakaian terbaik dan berkualitas tinggi di antara Local Brand Indonesia.",
-                'price'=>1,
+                'price'=>180000,
                 'photo'=>"images//12.jpg",
             ],
             [

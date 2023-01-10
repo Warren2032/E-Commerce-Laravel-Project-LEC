@@ -1,14 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container text-justify border border rounded-1 bg-body-secondary shadow-secondary">
+    <div class="container text-justify border rounded-1 shadow my-5">
         <div class="clearfix">
-          <img src="{{Storage::url($item['photo'])}}" class="col-md-6 float-md-start mb-5 ms-md-1" alt="...">
+          <img src="{{Storage::url($item['photo'])}}" class="col-md-6 float-md-start mb-5 ms-md-1 my-3 border border rounded-1" alt="...">
 
-          <div class="card border border-0 bg-body-secondary" style="width: 30rem; height: 30rem">
-            <div class="card-body">
+          <div class="card border-0" style="width: 30rem; height: 30rem">
+            <div class="card-body bg">
                 {{-- <p class="card-text">amounts sold : amounts here</p> --}}
-                <p class="card-text">Name : {{$item['name']}}</p>
+                <p class="card-text text-center fw-semibold">Name : {{$item['name']}}</p>
                 <p class="card-text">Description : {{$item['desc']}}</p>
                 {{-- <p class="card-text my-5">material : material here</p>
                 <p class="card-text my-5">sizing : sizing here</p>
