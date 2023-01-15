@@ -19,19 +19,28 @@ class CartController extends Controller
         ]);
         $cart->save();
 
-        return redirect()->back()->with('success1', 'Successfully added to Cart');
+        return redirect()->back()->with('success1', 'Successfully added to '. $request->get('name'). ' cart');
     }
 
     public function show()
     {
         $cart_item = Cart::all()->where('user_id', Auth::user()->id);
-        return view('cart', compact('cart_item'));
+        $total = $cart_item->sum('price');
+        return view('cart', compact('cart_item', 'total'));
     }
 
     public function destroy($id)
     {
         $cart_item = Cart::find($id);
         $cart_item->delete();
+
+        $cart_item = Cart::all()->where('user_id', Auth::user()->id);
+        return view('cart', compact('cart_item'));
+    }
+
+    public function destroyAll()
+    {
+        Cart::truncate();
 
         $cart_item = Cart::all()->where('user_id', Auth::user()->id);
         return view('cart', compact('cart_item'));

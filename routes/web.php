@@ -33,6 +33,7 @@ Auth::routes();
 Route::resource('cart', CartController::class);
 Route::get('/cart',[CartController::class,'show'])->name('cart');
 Route::post('/cartadd',[CartController::class,'addCart'])->name('addCart');
+Route::post('/cartdrop',[CartController::class,'destroyAll'])->name('cartdrop');
 
 Route::resource('wish', WishController::class);
 Route::get('/wishlist',[WishController::class,'show'])->name('wishlist');

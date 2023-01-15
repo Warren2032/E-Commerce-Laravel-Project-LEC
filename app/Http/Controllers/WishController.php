@@ -25,7 +25,8 @@ class WishController extends Controller
     public function show()
     {
         $wish_item = Wish::all()->where('user_id', Auth::user()->id);
-        return view('wish', compact('wish_item'));
+        $count = count($wish_item);
+        return view('wish', compact('wish_item', 'count'));
     }
 
     public function destroy($id)
@@ -34,6 +35,7 @@ class WishController extends Controller
         $wish_item->delete();
 
         $wish_item = Wish::all()->where('user_id', Auth::user()->id);
-        return view('wish', compact('wish_item'));
+        $count = count($wish_item);
+        return view('wish', compact('wish_item', 'count'));
     }
 }
