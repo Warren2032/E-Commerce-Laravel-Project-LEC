@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\WishController;
+use App\Http\Controllers\CartController;
 use App\Models\Category;
 use App\Models\wish;
 
@@ -25,7 +26,13 @@ Route::get('/', function () {
     return redirect()->route('home');
 });
 
+
+
 Auth::routes();
+
+Route::resource('cart', CartController::class);
+Route::get('/cart',[CartController::class,'show'])->name('cart');
+Route::post('/cartadd',[CartController::class,'addCart'])->name('addCart');
 
 Route::resource('wish', WishController::class);
 Route::get('/wishlist',[WishController::class,'show'])->name('wishlist');

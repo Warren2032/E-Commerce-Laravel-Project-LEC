@@ -62,7 +62,7 @@
                                 </li>
                             @endif
                         @else
-                            <a class="nav-link" href="">Cart</a>
+                            <a class="nav-link" href="{{ route('cart') }}">Cart</a>
                             <div class="vr"></div>
                             <a class="nav-link" href="{{ route('wishlist') }}">Wishlist</a>
                         <div class="vr"></div>

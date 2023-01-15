@@ -14,11 +14,10 @@
                 <br>
 
                 <div class="container justify-content-evenly my-5">
-
                     @if(Auth::check())
-                    <form action="{{route('addWish')}}" method="POST">
+                    <form action="{{route('addCart')}}" method="POST">
                         @csrf
-                        <a href="/cart" class="btn btn-primary mx-5">Add to cart</a>
+                        <button type="submit" class="btn btn-primary mx-5">Add to Cart</button>
 
                         <input type="hidden"  id="user_id" name="user_id" value="{{Auth::user()['id']}}">
                         <input type="hidden"  id="item_id" name="item_id" value="{{$item['id']}}">
@@ -28,11 +27,12 @@
                         @if (\Session::has('success1'))
                             <div class="alert alert-success">
                                 <ul>
-                                    <li>{!! \Session::get('success') !!}</li>
+                                    <li>{!! \Session::get('success1') !!}</li>
                                 </ul>
                             </div>
                         @endif
                     </form>
+
                     <form action="{{route('addWish')}}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-success">Add to Wishlist</button>
