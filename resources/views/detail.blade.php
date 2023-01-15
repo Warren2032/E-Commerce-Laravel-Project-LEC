@@ -25,7 +25,7 @@
                         <input type="hidden"  id="photo" name="photo" value="{{$item['photo']}}">
                         <input type="hidden"  id="price" name="price" value="{{$item['price']}}">
                         <input type="hidden"  id="name" name="name" value="{{$item['name']}}">
-                        @if (\Session::has('success'))
+                        @if (\Session::has('success1'))
                             <div class="alert alert-success">
                                 <ul>
                                     <li>{!! \Session::get('success') !!}</li>
@@ -42,10 +42,10 @@
                         <input type="hidden"  id="photo" name="photo" value="{{$item['photo']}}">
                         <input type="hidden"  id="price" name="price" value="{{$item['price']}}">
                         <input type="hidden"  id="name" name="name" value="{{$item['name']}}">
-                        @if (\Session::has('success'))
+                        @if (\Session::has('success2'))
                             <div class="alert alert-success">
                                 <ul>
-                                    <li>{!! \Session::get('success') !!}</li>
+                                    <li>{!! \Session::get('success2') !!}</li>
                                 </ul>
                             </div>
                         @endif

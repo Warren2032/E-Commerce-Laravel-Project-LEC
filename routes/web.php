@@ -27,6 +27,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::resource('wish', WishController::class);
 Route::get('/wishlist',[WishController::class,'show'])->name('wishlist');
 Route::post('/wishadd',[WishController::class,'addWish'])->name('addWish');
 

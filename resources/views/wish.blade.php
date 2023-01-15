@@ -9,6 +9,11 @@
             <span class="d-inline-block text-truncate" style="max-width:300px; ">{{$item['name']}} </span>
             <span >{{'IDR. '.number_format($item['price'], 2, '.', ',')}}</span>
         </div>
+        <form action="{{ route('wish.destroy', $item->id) }}" method="post">
+            @csrf
+            @method('DELETE')
+            <button class="btn btn-danger" type="submit" id="button1">Delete</button>
+        </form>
     </div>
 </a>
 @endforeach

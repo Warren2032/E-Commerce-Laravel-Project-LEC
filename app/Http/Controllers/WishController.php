@@ -19,11 +19,20 @@ class WishController extends Controller
         ]);
         $wish->save();
 
-        return redirect()->back()->with('success', 'Successfully added to wishlist');
+        return redirect()->back()->with('success2', 'Successfully added to wishlist');
     }
 
     public function show()
     {
+        $wish_item = Wish::all()->where('user_id', Auth::user()->id);
+        return view('wish', compact('wish_item'));
+    }
+
+    public function destroy($id)
+    {
+        $wish_item = Wish::find($id);
+        $wish_item->delete();
+
         $wish_item = Wish::all()->where('user_id', Auth::user()->id);
         return view('wish', compact('wish_item'));
     }
