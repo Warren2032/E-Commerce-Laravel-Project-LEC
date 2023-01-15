@@ -14,8 +14,25 @@
                 <br>
 
                 <div class="container justify-content-evenly my-5">
-                    <a href="/cart" class="btn btn-primary mx-5">Add to cart</a>
+
                     @if(Auth::check())
+                    <form action="{{route('addWish')}}" method="POST">
+                        @csrf
+                        <a href="/cart" class="btn btn-primary mx-5">Add to cart</a>
+
+                        <input type="hidden"  id="user_id" name="user_id" value="{{Auth::user()['id']}}">
+                        <input type="hidden"  id="item_id" name="item_id" value="{{$item['id']}}">
+                        <input type="hidden"  id="photo" name="photo" value="{{$item['photo']}}">
+                        <input type="hidden"  id="price" name="price" value="{{$item['price']}}">
+                        <input type="hidden"  id="name" name="name" value="{{$item['name']}}">
+                        @if (\Session::has('success'))
+                            <div class="alert alert-success">
+                                <ul>
+                                    <li>{!! \Session::get('success') !!}</li>
+                                </ul>
+                            </div>
+                        @endif
+                    </form>
                     <form action="{{route('addWish')}}" method="POST">
                         @csrf
                         <button type="submit" class="btn btn-success">Add to Wishlist</button>

@@ -19,8 +19,7 @@ class ItemController extends Controller
         $category = Category::find($id);
         $items = $category->items()->paginate(10);
 
-        dump($items);
-        //return view ('categoryResult',compact('items','category'));
+        return view ('categoryResult',compact('items','category'));
     }
 
     public function wishResult($id){
