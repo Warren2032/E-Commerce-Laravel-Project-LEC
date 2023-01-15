@@ -12,13 +12,23 @@ class ItemController extends Controller
     //
     public function item($id){
         $item = Item::find($id);
-
         return view('detail',compact('item'));
     }
 
     public function result($id){
         $category = Category::find($id);
         $items = $category->items()->paginate(10);
-        return view ('categoryResult',compact('items','category'));
+
+        dump($items);
+        //return view ('categoryResult',compact('items','category'));
+    }
+
+    public function wishResult($id){
+
+        $items = Item::find($id);
+
+        //dump($items);
+        return view ('wish',compact('items'));
     }
 }
+
