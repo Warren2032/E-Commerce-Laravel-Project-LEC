@@ -4,7 +4,10 @@ use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\WishController;
+use App\Http\Controllers\CartController;
 use App\Models\Category;
+use App\Models\wish;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,11 +20,24 @@ use App\Models\Category;
 |
 */
 
+
+
 Route::get('/', function () {
     return redirect()->route('home');
 });
 
+
+
 Auth::routes();
+
+Route::resource('cart', CartController::class);
+Route::get('/cart',[CartController::class,'show'])->name('cart');
+Route::post('/cartadd',[CartController::class,'addCart'])->name('addCart');
+Route::post('/cartdrop',[CartController::class,'destroyAll'])->name('cartdrop');
+
+Route::resource('wish', WishController::class);
+Route::get('/wishlist',[WishController::class,'show'])->name('wishlist');
+Route::post('/wishadd',[WishController::class,'addWish'])->name('addWish');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -30,3 +46,8 @@ Route::post('/profile', [ProfileController::class, 'update'])->name('profile-upd
 
 Route::get('/detail/{id}', [ItemController::class, 'item'])->name('detail');
 Route::get('/{id}', [ItemController::class, 'result'])->name('category');
+
+
+
+
+

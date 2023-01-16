@@ -61,6 +61,42 @@
                             </div>
                         </div>
 
+                        {{-- Gender --}}
+                        <div class="row mb-3 ">
+                            <label for="radio_button_gender" class="col-md-4 col-form-label text-md-end" >{{ __('Gender') }}</label>
+
+                            <div class="d-flex flex-column col-md-6 @error('radio_button_gender') is-invalid  @enderror">
+                                {{--no error message when validation failed, please add--}}
+                                <div class="d-inline-flex form-check">
+                                    <input class="form-check-input me-1 " type="radio" name="radio_button_gender" id="Male" value="Male">
+                                    <label class="form-check-label" for="Male">
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="d-inline-flex form-check">
+                                    <input class="form-check-input me-1" type="radio"  name="radio_button_gender" id="Female" value="Female">
+                                    <label class="form-check-label" for="Female">
+                                        Female
+                                    </label>
+                                </div>
+
+                                @error('radio_button_gender')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+
+                            </div>
+
+                        {{-- DOB --}}
+                        <div class="form-group mb-3" style="width">
+                            <label for="default-radio-1" class="ml-2 text-sm font-medium">Date of birth</label>
+                            <input name="dob" type="date" required autocomplete="name" autofocus
+                                class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                id="exampleInput125"
+                                placeholder="">
+                        </div>
+
                         <div class="row mb-0">
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">

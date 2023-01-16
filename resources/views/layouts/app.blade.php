@@ -26,7 +26,7 @@
                 <a class="navbar-brand" href="{{ url('/home') }}">
                     <img id="logo" src="{{ asset('storage/Images/logo.png') }}" alt="">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedConteusernt" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -62,13 +62,9 @@
                                 </li>
                             @endif
                         @else
-                            <a class="nav-link" href="">
-                                Cart
-                            </a>
+                            <a class="nav-link" href="{{ route('cart') }}">Cart</a>
                             <div class="vr"></div>
-                            <a class="nav-link" href="">
-                                Wishlist
-                            </a>
+                            <a class="nav-link" href="{{ route('wishlist') }}">Wishlist</a>
                         <div class="vr"></div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -77,7 +73,7 @@
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('profile') }}">Profile</a>
-                                    <a class="dropdown-item" href="">Transaction History</a>
+                                    {{-- <a class="dropdown-item" href="">Transaction History</a> --}}
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
