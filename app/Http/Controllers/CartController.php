@@ -33,9 +33,9 @@ class CartController extends Controller
     {
         $cart_item = Cart::find($id);
         $cart_item->delete();
-
+        $total = $cart_item->sum('price');
         $cart_item = Cart::all()->where('user_id', Auth::user()->id);
-        return view('cart', compact('cart_item'));
+        return view('cart', compact('cart_item', 'total'));
     }
 
     public function destroyAll()
